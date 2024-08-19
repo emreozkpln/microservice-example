@@ -1,0 +1,29 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: company-service
+          uri: lb:http://COMPANY-SERVICE
+          predicates:
+            - Path=/api/v1/company/**
+        - id: educator-service
+          uri: lb:http://EDUCATOR-SERVICE
+          predicates:
+            - Path=/api/v1/educator/**
+        - id: lesson-service
+          uri: lb:http://LESSON-SERVICE
+          predicates:
+            - Path=/api/v1/lesson/**
+        - id: room-service
+          uri: lb:http://ROOM-SERVICE
+          predicates:
+            - Path=/api/v1/rooms/**
+        - id: student-service
+          uri: lb:http://STUDENT-SERVICE
+          predicates:
+            - Path=/api/v1/students/**
+server:
+  port: 8222

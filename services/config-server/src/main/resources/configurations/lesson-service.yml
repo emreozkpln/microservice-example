@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/lesson
+    username: postgres
+    password: 12345
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: postgresql
+server:
+  port: 8080
+
+application:
+  config:
+    student-url: http://localhost:8050/api/v1/students
+    educator-url: http://localhost:8090/api/v1/educator
